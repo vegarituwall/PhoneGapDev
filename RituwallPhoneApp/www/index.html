@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="phonegap-1.3.0.js"></script>
+    <script type="text/javascript" charset="utf-8" src="pg-plugin-fb-connect.js"></script>
+    <script type="text/javascript" charset="utf-8" src="facebook_js_sdk.js"></script>
+        
+
+
+    <script type="text/javascript" charset="utf-8">
+        
+        
+        
+        
+        /** RITUWALL CODE **/
+        /** RITUWALL CODE **/
+        /** RITUWALL CODE **/
+        /** RITUWALL CODE **/
+        /** RITUWALL CODE **/
+        
+        
+        $("document").ready(function() {
+                            
+                            $("#rwMyInfo").click(function() {
+                                                 
+                                                 var fbs = FB.getSession();
+                                                 
+                                                 alert(JSON.stringify(fbs.uid));
+                                                 
+                                                 });
+                            
+                            });
+        
+        
+        /** RITUWALL CODE **/
+        /** RITUWALL CODE **/
+        /** RITUWALL CODE **/
+        /** RITUWALL CODE **/
+        /** RITUWALL CODE **/
+        
+        
+        /** PHONEGAP SAMPLE FOTO APP **/
+        /** PHONEGAP SAMPLE FOTO APP **/
+        /** PHONEGAP SAMPLE FOTO APP **/
+        /** PHONEGAP SAMPLE FOTO APP **/
+        /** PHONEGAP SAMPLE FOTO APP **/
+        
+        function preventBehavior(e) 
+        { 
+            e.preventDefault(); 
+        };
+        //document.addEventListener("touchmove", preventBehavior, false);
+        
+        
+        var pictureSource;   // picture source
+        var destinationType; // sets the format of returned value 
+        
+        // Wait for PhoneGap to connect with the device
+        //
+        document.addEventListener("deviceready",onDeviceReady,false);
+        
+        // PhoneGap is ready to be used!
+        //
+        function onDeviceReady() {
+            pictureSource=navigator.camera.PictureSourceType;
+            destinationType=navigator.camera.DestinationType;
+        }
+        
+        // Called when a photo is successfully retrieved
+        //
+        function onPhotoDataSuccess(imageData) {
+            // Uncomment to view the base64 encoded image data
+            // console.log(imageData);
+            
+            // Get image handle
+            //
+            var smallImage = document.getElementById('smallImage');
+            
+            // Unhide image elements
+            //
+            smallImage.style.display = 'block';
+            
+            // Show the captured photo
+            // The inline CSS rules are used to resize the image
+            //
+            smallImage.src = "data:image/jpeg;base64," + imageData;
+        }
+        
+        // Called when a photo is successfully retrieved
+        //
+        function onPhotoURISuccess(imageURI) {
+            // Uncomment to view the image file URI 
+            // console.log(imageURI);
+            
+            // Get image handle
+            //
+            var largeImage = document.getElementById('largeImage');
+            
+            // Unhide image elements
+            //
+            largeImage.style.display = 'block';
+            
+            // Show the captured photo
+            // The inline CSS rules are used to resize the image
+            //
+            largeImage.src = imageURI;
+        }
+        
+        // A button will call this function
+        //
+        function capturePhoto() {
+            // Take picture using device camera and retrieve image as base64-encoded string
+            navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50 });
+        }
+        
+        // A button will call this function
+        //
+        function capturePhotoEdit() {
+            // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
+            navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true }); 
+        }
+        
+        // A button will call this function
+        //
+        function getPhoto(source) {
+            // Retrieve image file location from specified source
+            navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
+                                        destinationType: destinationType.FILE_URI,
+                                        sourceType: source });
+        }
+        
+        // Called if something bad happens.
+        // 
+        function onFail(message) {
+            alert('Failed because: ' + message);
+        }
+        
+        /** PHONEGAP SAMPLE FOTO APP **/
+        /** PHONEGAP SAMPLE FOTO APP **/
+        /** PHONEGAP SAMPLE FOTO APP **/
+        /** PHONEGAP SAMPLE FOTO APP **/
+        /** PHONEGAP SAMPLE FOTO APP **/
+        
+        
+
+        
+        
+        /** GITHUB URL: https://github.com/davejohnson/phonegap-plugin-facebook-connect **/
+        /** **/
+        /** PHONEGAP FACEBOOK PLUGIN APP **/
+        /** PHONEGAP FACEBOOK PLUGIN APP **/            
+        /** PHONEGAP FACEBOOK PLUGIN APP **/
+        /** PHONEGAP FACEBOOK PLUGIN APP **/
+        /** PHONEGAP FACEBOOK PLUGIN APP **/
+        
+        
+        
+        
+        
+        if (typeof PhoneGap == 'undefined') alert('PhoneGap variable does not exist. Check that you have included phonegap.js correctly');
+        if (typeof PG == 'undefined') alert('PG variable does not exist. Check that you have included pg-plugin-fb-connect.js correctly');
+        if (typeof FB == 'undefined') alert('FB variable does not exist. Check that you have included the Facebook JS SDK file.');
+        
+        FB.Event.subscribe('auth.login', function(response) {
+                           //alert('auth.login event');
+                           //alert(JSON.stringify(response));
+                           
+                           });
+        
+        FB.Event.subscribe('auth.logout', function(response) {
+                           //alert('auth.logout event');
+                           });
+        
+        FB.Event.subscribe('auth.sessionChange', function(response) {
+                           //alert('auth.sessionChange event');
+                           });
+        
+        FB.Event.subscribe('auth.statusChange', function(response) {
+                           //alert('auth.statusChange event');
+                           });
+        
+        function getSession() {
+            //alert(JSON.stringify(FB.getSession()));
+        }
+        
+        function getLoginStatus() {
+            FB.getLoginStatus(function(response) {
+                              if (response.session) {
+                                alert('logged in');
+                              } else {
+                                alert('not logged in');
+                              }
+            });
+        }
+        
+        function me() {
+            $("#facebook-name").html('Used not logged in.');
+            $("#facebook-avatar").fadeOut("fast");
+            
+            FB.api('/me', function(response) {
+                   if (response.error) {
+                   alert(JSON.stringify(response.error));
+                   } else {
+                   var data = document.getElementById('facebook-log');
+                   $("#session-data").html(JSON.stringify(response, null, '<br>'));
+                   $("#facebook-name").html(response.name);
+                   //alert("http://graph.facebook.com/"+response.id+"/picture");
+                   $("#facebook-avatar").fadeIn("fast");
+                   $("#facebook-avatar").attr("src", "http://graph.facebook.com/"+response.id+"/picture");
+            /*
+                   response.data.forEach(function(item) {
+                                         var d = document.createElement('div');
+                                         d.innerHTML = item.name;
+                                         data.appendChild(d);
+                                         });
+            */
+                   }
+                   });
+                    
+        }
+        
+        function logout() {
+            
+                FB.logout(function(response) {
+                          alert('logged out');
+                      });
+             
+            
+        }
+        
+        function login() {
+            FB.login(
+                     function(response) {
+                     if (response.session) {
+                     //alert('logged in');
+                     me();
+                     } else {
+                     alert('not logged in');
+                     }
+                     },
+                     { perms: "email,offline_access" }
+                     );
+        }
+        
+        document.addEventListener('deviceready', function() {
+                                  try {
+                                  //alert('Device is ready! Make sure you set your app_id below this alert.');
+                                  FB.init({ appId: "180197132006312", nativeInterface: PG.FB });
+                                  document.getElementById('data').innerHTML = "";
+                                  } catch (e) {
+                                  alert(e);
+                                  }
+                                  }, false);
+        
+        /** PHONEGAP FACEBOOK PLUGIN APP **/
+        /** PHONEGAP FACEBOOK PLUGIN APP **/
+        /** PHONEGAP FACEBOOK PLUGIN APP **/            
+        /** PHONEGAP FACEBOOK PLUGIN APP **/
+        /** PHONEGAP FACEBOOK PLUGIN APP **/
+        
+    </script>
+        
+        
+</head>
+<body>
+    <div id="page1" data-role="page">
+        
+        <div data-role="header">
+            <h1>Rituwall</h1>
+        </div><!-- /header -->
+        
+        <div data-role="content">	
+            
+            <div id="data"></div>
+            
+            <ul data-role="listview" data-inset="true" data-filter="false">
+                <li><a href="#page4">Login</a></li>
+                <li><a href="#page2">Camera</a></li>
+                <li><a href="#page3">Video</a></li>
+            </ul>
+
+        </div><!-- /content -->
+               
+        
+    </div><!-- /page -->
+    
+    
+    <div id="page4" data-role="page">
+        
+        <div data-role="header" data-position="inline">
+            <a href="#page1" data-icon="back">Back</a>
+            <h1>Facebook Login</h1>
+        </div>
+        
+        <div data-role="content">
+            <a onclick="login()" data-role="button">Login</a>
+            <a onclick="me()" data-role="button">Me</a>
+            <a onclick="logout()" data-role="button">Logout</a>             
+            <!--
+             <a onclick="getSession()" data-role="button">Get session</a>
+             <a onclick="getLoginStatus()" data-role="button">Get login</a>
+             -->
+            
+            <ul data-role="listview" data-theme="g">
+                <li id="facebook-name"></li>
+                <li><img id="facebook-avatar" /></li>
+            </ul>
+        
+            <div data-role="collapsible" data-content-theme="c">
+              <h3>Raw FB Session</h3>
+              <p id="session-data"></p>
+            </div>
+            
+        </div>
+    </div>        
+    
+    <div id="page2" data-role="page">
+        
+        <div data-role="header" data-position="inline">
+            <a href="#page1" data-icon="back">Back</a>
+            <h1>Camera</h1>
+        </div>
+        
+        <div data-role="content">
+            <a  onclick="capturePhoto();" data-role="button">Capture Photo</a>
+            <a  onclick="capturePhotoEdit();" data-role="button">Capture Editable Photo</a>
+            <a  onclick="getPhoto(pictureSource.PHOTOLIBRARY);" data-role="button">From Photo Library</a>
+            <a  onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);" data-role="button">From Photo Album</a>
+            <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+            <img style="display:none;" id="largeImage" src="" height="100" width="100" />        
+        </div>
+    </div>
+    
+    
+    <div id="page3" data-role="page">
+        
+        <div data-role="header" data-position="inline">
+            <a href="#page1" data-icon="back">Back</a>
+            <h1>Video</h1>
+        </div>
+    </div>    
+    
+</body>
+</html>
