@@ -66,7 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		58212B50149FDB09006D813A /* RituwallPhoneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RituwallPhoneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		58212B50149FDB09006D813A /* Rituwall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rituwall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58212B54149FDB09006D813A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58212B56149FDB09006D813A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		58212B58149FDB09006D813A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -161,8 +161,8 @@
 		58212B42149FDB08006D813A = {
 			isa = PBXGroup;
 			children = (
-				58212BB8149FF0A5006D813A /* facebook-ios-sdk.xcodeproj */,
 				58212B9D149FDC2E006D813A /* www */,
+				58212BB8149FF0A5006D813A /* facebook-ios-sdk.xcodeproj */,
 				58212B6E149FDB09006D813A /* RituwallPhoneApp */,
 				58212B53149FDB09006D813A /* Frameworks */,
 				58212B51149FDB09006D813A /* Products */,
@@ -172,7 +172,7 @@
 		58212B51149FDB09006D813A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				58212B50149FDB09006D813A /* RituwallPhoneApp.app */,
+				58212B50149FDB09006D813A /* Rituwall.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -356,7 +356,7 @@
 			);
 			name = RituwallPhoneApp;
 			productName = RituwallPhoneApp;
-			productReference = 58212B50149FDB09006D813A /* RituwallPhoneApp.app */;
+			productReference = 58212B50149FDB09006D813A /* Rituwall.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -558,7 +558,7 @@
 				GCC_PREFIX_HEADER = "RituwallPhoneApp/RituwallPhoneApp-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "PHONEGAP_FRAMEWORK=YES";
 				INFOPLIST_FILE = "RituwallPhoneApp/RituwallPhoneApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					UIKit,
@@ -569,8 +569,8 @@
 					"-weak_library",
 					/usr/lib/libSystem.B.dylib,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 2;
+				PRODUCT_NAME = Rituwall;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -589,7 +589,7 @@
 				GCC_PREFIX_HEADER = "RituwallPhoneApp/RituwallPhoneApp-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "PHONEGAP_FRAMEWORK=YES";
 				INFOPLIST_FILE = "RituwallPhoneApp/RituwallPhoneApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					UIKit,
@@ -600,8 +600,8 @@
 					"-weak_library",
 					/usr/lib/libSystem.B.dylib,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 2;
+				PRODUCT_NAME = Rituwall;
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

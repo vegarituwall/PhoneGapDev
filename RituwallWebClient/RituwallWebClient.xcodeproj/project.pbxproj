@@ -477,6 +477,7 @@
 				58212CC914A026E5006D813A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

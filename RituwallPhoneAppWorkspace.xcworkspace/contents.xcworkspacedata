@@ -2,10 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:RituwallPhoneApp/www/index.html">
+      location = "group:RituwallPhoneApp/www/js/mobile-app.js">
    </FileRef>
    <FileRef
       location = "group:RituwallPhoneApp/../RituwallWebClient/RituwallWebClient.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:RituwallPhoneApp/www/index.html">
    </FileRef>
    <FileRef
       location = "container:RituwallPhoneApp/RituwallPhoneApp.xcodeproj">

@@ -102,6 +102,7 @@
  }
  */
 
+/* RITUWALL MODIFICATION TO WRAP WEBCLIENT */
 
 - (BOOL)webView:(UIWebView *)theWebView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
